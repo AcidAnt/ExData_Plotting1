@@ -7,8 +7,7 @@ plot4_voltage_commands <- function(data) {
   plot(data$Date, data$Voltage, 
        type="l",
        xlab="datetime",
-       ylab="Voltage",
-       lwd=0.5)
+       ylab="Voltage")
 }
 
 # Plot of global reactive power over time
@@ -16,11 +15,10 @@ plot4_reactive_commands <- function(data) {
   plot(data$Date, data$Global_reactive_power, 
        type="l",
        xlab="datetime",
-       ylab="Global_reactive_power", 
-       lwd=0.5)
+       ylab="Global_reactive_power")
 }
 
-# Plot of energy sub metering 1-3 over time as png file.
+# Multible base plot
 plot4 <- function() {  
   # change local time to force English labels on x-axis
   Sys.setlocale("LC_TIME", "English")

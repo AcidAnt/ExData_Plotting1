@@ -23,13 +23,13 @@ read_power_data <- function() {
 
   # read data for specific dates
   # Values are read as characters and then converted into date, time and numeric values.
-  # This method is used to preserve NA values which otherwise would be converted to 0.
+  # This method is used to preserve NA values which would be converted to 0 otherwise.
   data <- read.csv.sql(data_file, 
                        sep=";",
                        sql="select * from file where Date = '1/2/2007' or Date = '2/2/2007'",
                        colClasses=c(rep("character", each=9)))
   
-  # combine Date and Time colomns into Date column and drop Time
+  # combine Date and Time columns into 1 column (Date) and drop Time
   data$Date <- strptime(paste(data$Date, data$Time), format="%d/%m/%Y %T")
   data <- subset(data, select=-c(Time))
   

@@ -37,6 +37,5 @@ plot4 <- function() {
     plot4_reactive_commands(data)
   })
   
-  
   dev.off() # device turned off
 }

@@ -6,8 +6,8 @@ plot3_commands <- function(data, legend_bty="n") {
        type="l",
        xlab="",
        ylab="Energy sub metering")
-  lines(d$Date, d$Sub_metering_2, col = "red")
-  lines(d$Date, d$Sub_metering_3, col = "blue")
+  lines(data$Date, data$Sub_metering_2, col = "red")
+  lines(data$Date, data$Sub_metering_3, col = "blue")
   
   # legend on topright corner
   legend("topright", 

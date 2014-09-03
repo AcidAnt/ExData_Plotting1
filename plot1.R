@@ -1,6 +1,9 @@
-source('scripts/read_power_data.R')
+source('read_power_data.R')
 
 # Histogram of the frequency of global active power (in kilowatts)
+#
+# Args:
+#   data: power data as data frame
 plot1_commands <- function(data) {
   hist(data$Global_active_power, 
        main="Global Active Power", 

@@ -1,8 +1,11 @@
-source('scripts/read_power_data.R')
-source('scripts/plot2.R')
-source('scripts/plot3.R')
+source('read_power_data.R')
+source('plot2.R')
+source('plot3.R')
 
 # Plot of Voltage over time
+#
+# Args:
+#   data: power data as data frame
 plot4_voltage_commands <- function(data) {
   plot(data$Date, data$Voltage, 
        type="l",
@@ -11,6 +14,9 @@ plot4_voltage_commands <- function(data) {
 }
 
 # Plot of global reactive power over time
+#
+# Args:
+#   data: power data as data frame
 plot4_reactive_commands <- function(data) {  
   plot(data$Date, data$Global_reactive_power, 
        type="l",
@@ -18,9 +24,9 @@ plot4_reactive_commands <- function(data) {
        ylab="Global_reactive_power")
 }
 
-# Multible base plot
+# Multible base plot as png file
 plot4 <- function() {  
-  # change local time to force English labels on x-axis
+  # change locale time to force English labels on x-axis
   Sys.setlocale("LC_TIME", "English")
   
   data <- read_power_data()

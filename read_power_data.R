@@ -2,12 +2,13 @@ library(sqldf)
 
 # Read data from file and return a data frame with desired power data (from 1/2/2007 to 2/2/2007).
 #
-# It is assumed that the data file "household_power_consumption.txt" is in the current working
-# directory. Otherwise it will be downloaded and unzipped.
-#
 # For reading only the rows with specific dates, the sqldf package is used. This package 
 # provides an easy way to read a file and filter it with an sql statement. As only the filtered
 # set is processed by R, large data sets can be handled.
+# Furthermore this approach is more robust than hardcoding line numbers.
+#
+# It is assumed that the data file "household_power_consumption.txt" is in the current working
+# directory. Otherwise it will be downloaded and unzipped.
 
 read_power_data <- function() {
   data_archive = "household_power_consumption.zip"

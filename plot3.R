@@ -1,6 +1,10 @@
-source('scripts/read_power_data.R')
+source('read_power_data.R')
 
 # Plot of energy sub metering 1-3 over time
+#
+# Args:
+#   data: power data as data frame
+#   legend_bty: box type to be drawn around legend
 plot3_commands <- function(data, legend_bty="n") {
   plot(data$Date, data$Sub_metering_1, 
        type="l",
@@ -19,7 +23,7 @@ plot3_commands <- function(data, legend_bty="n") {
 
 # Plot as png file
 plot3 <- function() {
-  # change local time to force English date labels
+  # change locale time to force English date labels
   Sys.setlocale("LC_TIME", "English")
   
   data <- read_power_data()

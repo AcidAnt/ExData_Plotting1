@@ -1,6 +1,10 @@
-source('scripts/read_power_data.R')
+source('read_power_data.R')
 
 # Plot of global active power over time
+#
+# Args:
+#   data: power data as data frame
+#   ylab: label text for y axis
 plot2_commands <- function(data, ylab = "Global Active Power") {  
   plot(data$Date, data$Global_active_power, 
        type="l",
@@ -10,7 +14,7 @@ plot2_commands <- function(data, ylab = "Global Active Power") {
 
 # Plot as png file
 plot2 <- function() {  
-  # change local time to force English date labels
+  # change locale time to force English date labels
   Sys.setlocale("LC_TIME", "English")
   
   data <- read_power_data()
